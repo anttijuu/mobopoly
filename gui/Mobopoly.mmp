@@ -1,0 +1,64 @@
+/*Copyright   Jan 31, 2006 Antti Juustila ----------------------
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+http://www.gnu.org/copyleft/gpl.html
+---------------------------------------------------------------*/
+
+TARGET            Mobopoly.app
+TARGETTYPE        app
+UID               0x100039CE 0x017ac299
+TARGETPATH        \system\apps\Mobopoly
+LANG              SC
+
+AIF              Mobopoly.aif ..\aif MobopolyAif.rss c12 mp_list_icon.bmp mp_list_icon_mask.bmp mp_pane_icon.bmp mp_pane_icon_mask.bmp
+
+SOURCEPATH        .
+SOURCE		MobopolyAppDll.cpp
+SOURCE		MobopolyApplication.cpp 
+SOURCE		MobopolyAppUi.cpp
+SOURCE		MobopolyDocument.cpp 
+SOURCE		MobopolyGameViewContainer.cpp
+SOURCE		MobopolyGameView.cpp
+SOURCE		MobopolyGameInfo.cpp
+SOURCE		MobopolyPropertyViewContainer.cpp
+SOURCE		MobopolyPropertyView.cpp
+SOURCE		MobopolyPropertyInfo.cpp
+
+RESOURCE		Mobopoly.rss
+RESOURCE		Mobopoly_caption.rss
+
+USERINCLUDE       ..\inc 
+
+SYSTEMINCLUDE     \epoc32\include
+
+LIBRARY		euser.lib
+LIBRARY		apparc.lib
+LIBRARY		cone.lib
+LIBRARY		eikcore.lib
+LIBRARY		eikctl.lib
+LIBRARY		eikcoctl.lib
+LIBRARY		eikdlg.lib
+LIBRARY		estor.lib
+
+LIBRARY		MobopolyEng.lib
+
+// Series 60 specific:
+LIBRARY		avkon.lib
+
+/**
+* Do not edit text here. These comments are maintained by CVS!
+*
+* $Log: Mobopoly.mmp,v $
+* Revision 1.1  2006/02/15 12:38:12  Antti
+* Committing first public version of the example solution
+*
+*
+*/

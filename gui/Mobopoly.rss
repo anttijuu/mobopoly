@@ -1,0 +1,214 @@
+/*Copyright   Feb 21, 2005 Antti Juustila ----------------------
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+http://www.gnu.org/copyleft/gpl.html
+---------------------------------------------------------------*/
+
+NAME MPOL
+
+#include <eikon.rh>
+#include <eikon.rsg>
+#include <avkon.rh>
+#include <avkon.rsg>
+
+#include "Mobopoly.hrh"
+
+#include "MobopolyDefines.h"
+
+// ---------------------------------------------------------
+//   
+//    Define the resource file signature 
+//    This resource should be empty.
+//
+// ---------------------------------------------------------
+//
+RESOURCE RSS_SIGNATURE { }
+
+// ---------------------------------------------------------
+//   
+//    Default Document Name
+//
+// ---------------------------------------------------------
+//
+RESOURCE TBUF
+	{
+	buf="";
+	}
+
+// ---------------------------------------------------------
+//   
+//    Define default menu and CBA key.
+//
+// ---------------------------------------------------------
+//
+RESOURCE EIK_APP_INFO
+    {
+	// no implementation required
+    }
+
+// ---------------------------------------------------------
+//   
+//    r_mobopoly_view1
+//    Define view 1
+//
+// ---------------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_mobopoly_view_gameview
+    {
+    menubar = r_mobopoly_menubar_gameview;
+    cba = R_AVKON_SOFTKEYS_OPTIONS_EXIT;
+    }
+
+// ---------------------------------------------------------
+//   
+//   r_mobopoly_menubar1
+//   Menu title definition
+//
+// ---------------------------------------------------------
+RESOURCE MENU_BAR r_mobopoly_menubar_gameview
+    {
+    titles =
+        {
+        MENU_TITLE {menu_pane = r_mobopoly_menu_gameview;}
+        };
+    }
+
+// ---------------------------------------------------------
+//   
+//   r_mobopoly_menu1
+//   Menu for "Options"
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_PANE r_mobopoly_menu_gameview
+    {
+    items = 
+        {
+        MENU_ITEM {command = EStartGame;  txt = "Start game";},
+        MENU_ITEM {command = EThrowDices;  txt = "Throw dices";},
+        MENU_ITEM {command = EBuyProperty;  txt = "Buy property";},
+        MENU_ITEM {command = EBuildHouse;  txt = "Build house";},
+        MENU_ITEM {command = EAknSoftkeyExit;   txt = "Exit";}
+        };
+    }
+
+// ---------------------------------------------------------
+//   
+//    r_mobopoly_view2
+//    Define view 2
+//
+// ---------------------------------------------------------
+//
+RESOURCE AVKON_VIEW r_mobopoly_view_propertyview
+    {
+	menubar = r_mobopoly_menubar_propertyview;
+    cba = R_AVKON_SOFTKEYS_OPTIONS_BACK;
+    }
+
+// ---------------------------------------------------------
+//   
+//   r_mobopoly_menubar2
+//   Menu title definition
+//
+// ---------------------------------------------------------
+RESOURCE MENU_BAR r_mobopoly_menubar_propertyview
+    {
+    titles =
+        {
+        MENU_TITLE {menu_pane = r_mobopoly_menu_propertyview;}
+        };
+    }
+
+// ---------------------------------------------------------
+//   
+//   r_mobopoly_menu2
+//   Menu for "Options"
+//
+// ---------------------------------------------------------
+//
+RESOURCE MENU_PANE r_mobopoly_menu_propertyview
+    {
+    items = 
+        {
+        MENU_ITEM {command = EBuyProperty;  txt = "Buy";}
+        };
+    }
+
+// Mobopoly notification messages.
+// The message length MUST BE MAX KMaxUINotificationMsgLen
+// characters defined in MobopolyDefines.h !!
+//
+
+RESOURCE TBUF r_mobopoly_throw_dices_alert
+	{
+	buf = "Your turn, throw dices!";
+	}
+	
+RESOURCE TBUF r_mobopoly_turn_to_swplayer
+	{
+	buf = "%s's turn";
+	}
+	
+RESOURCE TBUF r_mobopoly_buy_if_you_wish
+	{
+	buf = "You could buy this property";
+	}
+	
+RESOURCE TBUF r_mobopoly_player_bought_property
+	{
+	buf = "%S bought for $%d";
+	}
+		
+RESOURCE TBUF r_mobopoly_swplayer_did_not_buy
+	{
+	buf = "%S didn't buy it!";
+	}
+	
+RESOURCE TBUF r_mobopoly_game_over
+	{
+	buf = "Game over!";
+	}
+
+RESOURCE TBUF r_mobopoly_out_of_money
+	{
+	buf = "No money!";
+	}
+
+RESOURCE TBUF r_mobopoly_player_paid_rent
+	{
+	buf = "%S paid $%d rent";
+	}
+
+RESOURCE TBUF r_mobopoly_player_collected_money
+	{
+	buf = "%S got $%d";
+	}
+	
+RESOURCE TBUF r_mobopoly_player_threw
+	{
+	buf = "%S threw %d";
+	}
+	
+RESOURCE TBUF r_mobopoly_seconds_to_buy
+	{
+	buf = "%d secs buytime left...";
+	}
+	
+
+/**
+* Do not edit text here. These comments are maintained by CVS!
+*
+* $Log: Mobopoly.rss,v $
+* Revision 1.1  2006/02/15 12:38:12  Antti
+* Committing first public version of the example solution
+*
+*
+*/

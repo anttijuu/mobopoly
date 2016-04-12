@@ -1,0 +1,53 @@
+/*Copyright   Jan 26, 2006 Antti Juustila ----------------------
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+http://www.gnu.org/copyleft/gpl.html
+---------------------------------------------------------------*/
+
+// MobopolyEng.mmp
+//
+
+TARGET			MobopolyEng.dll
+TARGETTYPE		dll
+UID			0x1000008d 0x01263401
+SOURCEPATH		.
+
+SOURCE			AppEngDll.cpp
+SOURCE			Player.cpp
+SOURCE			HumanPlayer.cpp
+SOURCE			Turn.cpp
+SOURCE			Property.cpp
+SOURCE			FreeParking.cpp
+SOURCE			GoSquare.cpp
+SOURCE			BuildableProperty.cpp
+SOURCE			Bank.cpp
+SOURCE			PropertyVisitor.cpp
+SOURCE			GameStateData.cpp
+SOURCE			BuyTimer.cpp
+
+USERINCLUDE		..\inc
+SYSTEMINCLUDE		\epoc32\include
+LIBRARY			euser.lib
+LIBRARY			efsrv.lib
+LIBRARY			estor.lib
+LIBRARY			bafl.lib
+
+EXPORTUNFROZEN
+
+/**
+* Do not edit text here. These comments are maintained by CVS!
+*
+* $Log: MobopolyEng.mmp,v $
+* Revision 1.1  2006/02/15 12:38:10  Antti
+* Committing first public version of the example solution
+*
+*
+*/
